@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  node:
+    build:
+      context: ./react-training
+      dockerfile: Dockerfile
+    container_name: react-training
+    environment:
+      - CHOKIDAR_USEPOLLING=true # ホットリロードの設定
+    volumes:
+      # - ./:/usr/src/app
+      - ./react-training:/react-training
+    # command: sh -c "cd react-training && npm start"
+    ports:
+      - "3000:3000"
