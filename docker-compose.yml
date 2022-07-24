@@ -6,7 +6,8 @@ services:
       dockerfile: Dockerfile
     container_name: react-training
     environment:
-      - CHOKIDAR_USEPOLLING=true # ホットリロードの設定
+      # - CHOKIDAR_USEPOLLING=true # ホットリロード
+      - WATCHPACK_POLLING=true #上の設定だと動かない
     volumes:
       # - ./:/usr/src/app
       - ./react-training:/react-training
